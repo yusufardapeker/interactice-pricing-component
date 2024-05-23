@@ -1,0 +1,31 @@
+[
+	{
+		"rangeValue": 0,
+		"pageviews": "10k pageviews",
+		"amountNumber": 8
+	},
+
+	{
+		"rangeValue": 25,
+		"pageviews": "50k pageviews",
+		"amountNumber": 12
+	},
+
+	{
+		"rangeValue": 50,
+		"pageviews": "100k pageviews",
+		"amountNumber": 16
+	},
+
+	{
+		"rangeValue": 75,
+		"pageviews": "500k pageviews",
+		"amountNumber": 24
+	},
+
+	{
+		"rangeValue": 100,
+		"pageviews": "1M pageviews",
+		"amountNumber": 36
+	}
+]

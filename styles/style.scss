@@ -1,0 +1,325 @@
+@import "./colors";
+
+body {
+	font-family: "Manrope", sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	background: url("../images/bg-pattern.svg") no-repeat 0% -30% $very-pale-blue;
+	color: $grayish-blue;
+}
+
+:root {
+	--track-width: 50%;
+}
+
+.container {
+	max-width: 600px;
+	width: 88%;
+	margin: 48px auto;
+
+	.head {
+		text-align: center;
+		position: relative;
+		margin-bottom: 76px;
+
+		&-title {
+			font-size: 22px;
+			color: $dark-desaturated-blue;
+			font-weight: 800;
+			margin-bottom: 8px;
+		}
+
+		&-description {
+			display: inline-block;
+			width: 22ch;
+		}
+
+		&-img {
+			position: absolute;
+			top: -36px;
+			left: 86px;
+			z-index: -1;
+			width: 160px;
+		}
+	}
+
+	.card {
+		background-color: $white;
+		padding: 32px 24px;
+		border-radius: 8px;
+		position: relative;
+		box-shadow: 0px 2px 12px 8px $light-grayish-blue;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 56%;
+			width: 100%;
+			height: 2px;
+			background-color: $light-grayish-blue;
+		}
+
+		&-pricing {
+			display: flex;
+			flex-direction: column;
+			gap: 36px;
+			text-align: center;
+			margin-bottom: 32px;
+
+			.pageviews {
+				font-weight: 800;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+
+			.amount {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				justify-content: center;
+
+				&-number {
+					font-size: 32px;
+					font-weight: 800;
+					color: $dark-desaturated-blue;
+				}
+			}
+
+			.range-input {
+				appearance: none;
+				cursor: pointer;
+				background-color: $light-grayish-blue;
+				border-radius: 9999px;
+
+				&::-webkit-slider-runnable-track {
+					border-radius: 9999px;
+					height: 8px;
+					background: linear-gradient($soft-cyan 0 0) no-repeat left / var(--track-width);
+				}
+
+				&::-webkit-slider-thumb {
+					appearance: none;
+					width: 32px;
+					height: 32px;
+					border-radius: 50%;
+					background: url("../images/icon-slider.svg") no-repeat center $strong-cyan;
+					margin-top: -12px;
+					box-shadow: 0px 12px 20px 6px $soft-cyan;
+				}
+
+				&:focus::-webkit-slider-thumb {
+					cursor: grabbing;
+				}
+
+				&:hover::-webkit-slider-thumb {
+					background-color: $strong-cyan;
+				}
+			}
+
+			.toggle-plan {
+				font-size: 12px;
+				margin-bottom: 48px;
+
+				.toggle-btn {
+					background-color: $light-grayish-blue-toggle;
+					padding: 2px 24px;
+					border-radius: 99px;
+					margin-right: 8px;
+					margin-left: 8px;
+					cursor: pointer;
+					position: relative;
+					transition: all 300ms;
+
+					&:hover {
+						background-color: $soft-cyan;
+					}
+
+					&::after {
+						content: "";
+						position: absolute;
+						top: 3px;
+						left: 4px;
+						width: 16px;
+						height: 16px;
+						border-radius: 50%;
+						background-color: $very-pale-blue;
+						transition: all 200ms;
+					}
+
+					&.active {
+						background-color: $strong-cyan;
+
+						&::after {
+							top: 3px;
+							left: 28px;
+						}
+					}
+				}
+				.yearly-billing-discount {
+					background-color: $light-grayish-red;
+					color: $light-red;
+					padding: 2px 8px;
+					border-radius: 99px;
+					margin-left: 6px;
+				}
+			}
+		}
+
+		&-features {
+			font-size: 14px;
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+
+			&-list {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+
+				&-item {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 16px;
+				}
+			}
+
+			&-btn {
+				background-color: $dark-desaturated-blue;
+				color: $pale-blue;
+				align-self: center;
+				padding: 12px 40px;
+				border-radius: 9999px;
+				font-weight: 600;
+				font-size: inherit;
+				transition: all 200ms;
+
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	body {
+		background-position: 0% 10%;
+	}
+
+	.container {
+		margin: 96px auto;
+
+		.head {
+			margin-bottom: 104px;
+
+			&-title {
+				font-size: 36px;
+				margin-bottom: 12px;
+			}
+
+			&-description {
+				width: unset;
+				font-size: 18px;
+			}
+
+			&-img {
+				top: -36px;
+				left: 216px;
+				width: 176px;
+			}
+		}
+
+		.card {
+			padding: 48px;
+
+			&::after {
+				top: 62%;
+			}
+
+			&-pricing {
+				gap: 64px;
+
+				.pageviews {
+					margin-right: auto;
+					// margin-bottom: 24px;
+					font-size: 18px;
+				}
+
+				.amount {
+					position: absolute;
+					top: 32px;
+					right: 56px;
+
+					&-number {
+						font-size: 40px;
+					}
+
+					&-plan-time {
+						font-size: 18px;
+					}
+				}
+
+				.range-input {
+					&::-webkit-slider-runnable-track {
+						height: 12px;
+					}
+
+					&::-webkit-slider-thumb {
+						width: 44px;
+						height: 44px;
+						margin-top: -16px;
+					}
+				}
+
+				.toggle-plan {
+					font-size: 16px;
+					margin-bottom: 48px;
+
+					.toggle-btn {
+						padding: 4px 28px;
+						margin-right: 16px;
+						margin-left: 16px;
+
+						&::after {
+							top: 4px;
+							left: 6px;
+							width: 20px;
+							height: 20px;
+						}
+
+						&.active {
+							&::after {
+								top: 4px;
+								left: 32px;
+							}
+						}
+					}
+
+					.yearly-billing-discount {
+						padding: 2px 8px;
+						margin-left: 12px;
+						font-size: 14px;
+					}
+				}
+			}
+
+			&-features {
+				flex-direction: row;
+				justify-content: space-between;
+				font-size: 16px;
+
+				&-list {
+					&-item {
+						justify-content: flex-start;
+
+						.check-icon {
+							width: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

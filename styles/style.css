@@ -1,0 +1,271 @@
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  background: url("../images/bg-pattern.svg") no-repeat 0% -30% hsl(230, 100%, 99%);
+  color: hsl(225, 20%, 60%);
+}
+
+:root {
+  --track-width: 50%;
+}
+
+.container {
+  max-width: 600px;
+  width: 88%;
+  margin: 48px auto;
+}
+.container .head {
+  text-align: center;
+  position: relative;
+  margin-bottom: 76px;
+}
+.container .head-title {
+  font-size: 22px;
+  color: hsl(227, 35%, 25%);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.container .head-description {
+  display: inline-block;
+  width: 22ch;
+}
+.container .head-img {
+  position: absolute;
+  top: -36px;
+  left: 86px;
+  z-index: -1;
+  width: 160px;
+}
+.container .card {
+  background-color: hsl(0, 0%, 100%);
+  padding: 32px 24px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0px 2px 12px 8px hsl(224, 65%, 95%);
+}
+.container .card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 56%;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(224, 65%, 95%);
+}
+.container .card-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.container .card-pricing .pageviews {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.container .card-pricing .amount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+.container .card-pricing .amount-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+}
+.container .card-pricing .range-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  background-color: hsl(224, 65%, 95%);
+  border-radius: 9999px;
+}
+.container .card-pricing .range-input::-webkit-slider-runnable-track {
+  border-radius: 9999px;
+  height: 8px;
+  background: linear-gradient(hsl(174, 77%, 80%) 0 0) no-repeat left/var(--track-width);
+}
+.container .card-pricing .range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: url("../images/icon-slider.svg") no-repeat center hsl(174, 86%, 45%);
+  margin-top: -12px;
+  box-shadow: 0px 12px 20px 6px hsl(174, 77%, 80%);
+}
+.container .card-pricing .range-input:focus::-webkit-slider-thumb {
+  cursor: grabbing;
+}
+.container .card-pricing .range-input:hover::-webkit-slider-thumb {
+  background-color: hsl(174, 86%, 45%);
+}
+.container .card-pricing .toggle-plan {
+  font-size: 12px;
+  margin-bottom: 48px;
+}
+.container .card-pricing .toggle-plan .toggle-btn {
+  background-color: hsl(223, 50%, 87%);
+  padding: 2px 24px;
+  border-radius: 99px;
+  margin-right: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 300ms;
+}
+.container .card-pricing .toggle-plan .toggle-btn:hover {
+  background-color: hsl(174, 77%, 80%);
+}
+.container .card-pricing .toggle-plan .toggle-btn::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: hsl(230, 100%, 99%);
+  transition: all 200ms;
+}
+.container .card-pricing .toggle-plan .toggle-btn.active {
+  background-color: hsl(174, 86%, 45%);
+}
+.container .card-pricing .toggle-plan .toggle-btn.active::after {
+  top: 3px;
+  left: 28px;
+}
+.container .card-pricing .toggle-plan .yearly-billing-discount {
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: 6px;
+}
+.container .card-features {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.container .card-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.container .card-features-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.container .card-features-btn {
+  background-color: hsl(227, 35%, 25%);
+  color: hsl(226, 100%, 87%);
+  align-self: center;
+  padding: 12px 40px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: inherit;
+  transition: all 200ms;
+}
+.container .card-features-btn:hover {
+  color: hsl(0, 0%, 100%);
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    background-position: 0% 10%;
+  }
+  .container {
+    margin: 96px auto;
+  }
+  .container .head {
+    margin-bottom: 104px;
+  }
+  .container .head-title {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  .container .head-description {
+    width: unset;
+    font-size: 18px;
+  }
+  .container .head-img {
+    top: -36px;
+    left: 216px;
+    width: 176px;
+  }
+  .container .card {
+    padding: 48px;
+  }
+  .container .card::after {
+    top: 62%;
+  }
+  .container .card-pricing {
+    gap: 64px;
+  }
+  .container .card-pricing .pageviews {
+    margin-right: auto;
+    font-size: 18px;
+  }
+  .container .card-pricing .amount {
+    position: absolute;
+    top: 32px;
+    right: 56px;
+  }
+  .container .card-pricing .amount-number {
+    font-size: 40px;
+  }
+  .container .card-pricing .amount-plan-time {
+    font-size: 18px;
+  }
+  .container .card-pricing .range-input::-webkit-slider-runnable-track {
+    height: 12px;
+  }
+  .container .card-pricing .range-input::-webkit-slider-thumb {
+    width: 44px;
+    height: 44px;
+    margin-top: -16px;
+  }
+  .container .card-pricing .toggle-plan {
+    font-size: 16px;
+    margin-bottom: 48px;
+  }
+  .container .card-pricing .toggle-plan .toggle-btn {
+    padding: 4px 28px;
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+  .container .card-pricing .toggle-plan .toggle-btn::after {
+    top: 4px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+  }
+  .container .card-pricing .toggle-plan .toggle-btn.active::after {
+    top: 4px;
+    left: 32px;
+  }
+  .container .card-pricing .toggle-plan .yearly-billing-discount {
+    padding: 2px 8px;
+    margin-left: 12px;
+    font-size: 14px;
+  }
+  .container .card-features {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  .container .card-features-list-item {
+    justify-content: flex-start;
+  }
+  .container .card-features-list-item .check-icon {
+    width: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */
