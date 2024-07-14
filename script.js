@@ -9,7 +9,8 @@ const displayData = async () => {
 	const res = await fetch("data.json");
 	const data = await res.json();
 
-	let initialAmountNumbers = [8, 12, 16, 24, 36];
+	const initialAmountNumbers = [8, 12, 16, 24, 36];
+	const DISCOUNT_RATE = 0.25;
 
 	rangeInput.addEventListener("input", () => {
 		document.documentElement.style.setProperty("--track-width", `${rangeInput.value}%`);
@@ -23,7 +24,8 @@ const displayData = async () => {
 			}
 
 			if (toggleBtn.classList.value.includes("active") && rangeInput.value == object.rangeValue) {
-				amountNumber.textContent = `$${(object.amountNumber -= object.amountNumber * 0.25)}.00`;
+				amountNumber.textContent = `$${(object.amountNumber -=
+					object.amountNumber * DISCOUNT_RATE)}.00`;
 			}
 		});
 	});
@@ -32,10 +34,11 @@ const displayData = async () => {
 		toggleBtn.classList.toggle("active");
 
 		data.forEach((object, index) => {
-			object.amountNumber = initialAmountNumbers[index]; // same logic that explained above
+			object.amountNumber = initialAmountNumbers[index]; // same logic that explained line 18
 
 			if (toggleBtn.classList.value.includes("active") && rangeInput.value == object.rangeValue) {
-				amountNumber.textContent = `$${(object.amountNumber -= object.amountNumber * 0.25)}.00`;
+				amountNumber.textContent = `$${(object.amountNumber -=
+					object.amountNumber * DISCOUNT_RATE)}.00`;
 			}
 
 			if (toggleBtn.classList.length === 1 && rangeInput.value == object.rangeValue) {
